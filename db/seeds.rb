@@ -7,7 +7,7 @@
 #   Character.create(name: 'Luke', movie: movies.first)
 
 User.delete_all
-  
+
 User.create(first_name: 'Aaron', last_name: 'Hedenstrom', address1: "", address2: "", city: "Minneapolis", state: "MN", zip_code: "", phone: '6514851561', email: 'aaronhedenstrommusic@gmail.com')
 User.create(first_name: 'Abinnet', last_name: 'Berhanu', address1: "", address2: "", city: "Minneapolis", state: "MN", zip_code: "", phone: '757 206-3512', email: 'abinnet.berhanu@icloud.com')
 User.create(first_name: 'Adriel', last_name: 'Brown', address1: "", address2: "", city: "New York", state: "NY", zip_code: "", phone: '929-484-8546', email: 'gretschlife@gmail.com')
