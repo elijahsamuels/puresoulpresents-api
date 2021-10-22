@@ -40,7 +40,6 @@ class UsersController < ApplicationController
   private
   # Use callbacks to share common setup or constraints between actions.
   def set_user
-    # byebug
     @user = User.find(params[:id])
   end
   
@@ -64,11 +63,15 @@ class UsersController < ApplicationController
         :zip_code,
         :account_name,
         :ach_number,
+        :ach_routing_number,
         :tax_city,
         :tax_state,
         :tax_zip,
         :taxID,
         :bio,
+        :staff_notes,
+        :nick_name,
+        :user_staff_rating,
       )
     end
 end
