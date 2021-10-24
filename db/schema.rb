@@ -10,10 +10,27 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_10_22_154618) do
+ActiveRecord::Schema.define(version: 2021_10_24_194632) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "events", force: :cascade do |t|
+    t.string "event_date"
+    t.string "address1"
+    t.string "city"
+    t.string "state"
+    t.string "zip_code"
+    t.string "end_time"
+    t.string "start_time"
+    t.string "load_in_time"
+    t.string "soundcheck_time"
+    t.string "total_amount"
+    t.string "deposit_amount"
+    t.string "balance_amount"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+  end
 
   create_table "users", force: :cascade do |t|
     t.string "first_name"
@@ -39,6 +56,15 @@ ActiveRecord::Schema.define(version: 2021_10_22_154618) do
     t.string "nick_name"
     t.string "user_staff_rating"
     t.string "photo"
+  end
+
+  create_table "users_at_events", force: :cascade do |t|
+    t.bigint "users_id"
+    t.bigint "events_id"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["events_id"], name: "index_users_at_events_on_events_id"
+    t.index ["users_id"], name: "index_users_at_events_on_users_id"
   end
 
 end
