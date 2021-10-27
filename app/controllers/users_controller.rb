@@ -18,6 +18,7 @@ class UsersController < ApplicationController
     @user = User.new(user_params)
     if @user.save
       render json: @user, status: :created, location: @user
+      redirect_to @user
     else
       render json: @user.errors, status: :unprocessable_entity
     end
@@ -50,29 +51,34 @@ class UsersController < ApplicationController
     )
     .permit(
         :id, 
-        :first_name, 
-        :last_name, 
-        :email, 
-        :phone, 
-        :created_at, 
-        :updated_at, 
-        :address1, 
-        :address2, 
-        :city, 
-        :state, 
+        :first_name,
+        :last_name,
+        :email,
+        :phone,
+        :address1,
+        :address2,
+        :city,
+        :state,
         :zip_code,
         :account_name,
         :ach_number,
         :ach_routing_number,
+        :bio,
+        :nick_name,
+        :staff_notes,
+        :user_staff_rating,
+        # :user_staff_rating_label,
+        :photo,
+        :tax_first_or_business_name,
+        :tax_last_name,
+        :tax_address1,
+        :tax_address2,
         :tax_city,
         :tax_state,
         :tax_zip,
         :taxID,
-        :bio,
-        :staff_notes,
-        :nick_name,
-        :user_staff_rating,
-        :photo,
+        :created_at, 
+        :updated_at, 
       )
     end
 end

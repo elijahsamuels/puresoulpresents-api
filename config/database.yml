@@ -83,4 +83,4 @@ production:
   <<: *default
   database: puresoulpresents_api_production
   username: puresoulpresents_api
-  password: <%= ENV['PURESOULPRESENTS_API_DATABASE_PASSWORD'] %>
+  password: 
