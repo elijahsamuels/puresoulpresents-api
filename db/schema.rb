@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_10_28_054451) do
+ActiveRecord::Schema.define(version: 2021_10_29_005434) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -45,6 +45,31 @@ ActiveRecord::Schema.define(version: 2021_10_28_054451) do
     t.boolean "musician_invoices_sent"
     t.string "doors_open_time"
     t.string "soundcheck_complete_time"
+    t.string "set_1_start_time"
+    t.string "set_2_start_time"
+    t.string "venue_name"
+    t.integer "venue_capacity"
+    t.string "status"
+    t.boolean "indoor"
+    t.string "last_updated_by"
+    t.text "set_list"
+    t.text "client_notes"
+    t.text "staff_notes"
+    t.string "musician01"
+    t.string "musician02"
+    t.string "musician03"
+    t.string "musician04"
+    t.string "musician05"
+    t.string "musician06"
+    t.string "musician07"
+    t.string "musician08"
+    t.string "musician09"
+    t.string "musician10"
+    t.string "musician11"
+    t.string "musician12"
+    t.string "musician13"
+    t.string "musician14"
+    t.string "musician15"
   end
 
   create_table "gigs", force: :cascade do |t|
