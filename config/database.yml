@@ -82,7 +82,7 @@ test:
 production:
   <<: *default
   database: puresoulpresents_api_production
-  username: puresoulpresents
-  # username: puresoulpresents_api
+  # username: postgres
+  username: puresoulpresents_api
   password: <%= ENV['PURESOULPRESENTS_API_DATABASE_PASSWORD'] %>
  
