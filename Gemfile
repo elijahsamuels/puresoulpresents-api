@@ -26,7 +26,12 @@ gem 'bootsnap', '>= 1.4.4', require: false
 gem 'rack-cors'
 gem 'dotenv-rails'
 
+gem 'active_model_serializers'
 
+# gem 'aws-sdk-rails'
+# Google Cloud Platform (GCP) App Engine runtime environment
+# gem 'appengine', '~> 0.4.5' # old version from ruby gems
+gem "appengine", "~> 0.6" # new version from google-cloud-platform guild
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console

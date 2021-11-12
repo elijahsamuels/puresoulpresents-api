@@ -5,11 +5,13 @@ class EventsController < ApplicationController
   # GET /events
   def index
     @events = Event.all
-    render json: @events
+    # render json: @events #, each_serializer: UserSerializer
+    render json: @events #include: [user: { only: [:first_name, :last_name]}]
   end
 
   # GET /events/1
   def show  
+    # render json: @event include: [user: { only: [:first_name, :last_name]}]
     render json: @event
   end
 
