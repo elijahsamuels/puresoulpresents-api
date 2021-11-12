@@ -78,11 +78,33 @@ test:
 #
 # Read https://guides.rubyonrails.org/configuring.html#configuring-a-database
 # for a full overview on how database connection configuration can be specified.
-#
-production:
-  <<: *default
-  database: puresoulpresents_api_production
-  # username: postgres
-  username: puresoulpresents_api
-  password: <%= ENV['PURESOULPRESENTS_API_DATABASE_PASSWORD'] %>
+
+# LOCAL production environment
+# production:
+#   <<: *default
+#   database: puresoulpresents_api_production
+#   username: <%= ENV['PURESOULPRESENTS_API_LOCAL_DATABASE_USERNAME'] %>
+#   password: <%= ENV['PURESOULPRESENTS_API_DATABASE_PASSWORD'] %>
  
+
+# Google Cloud Platform production environment
+production:
+  adapter: postgresql
+  encoding: unicode
+  pool: 5
+  timeout: 5000
+  username: <%= ENV['GCP_USERNAME'] %>
+  password: <%= ENV['GCP_PASSWORD'] %>
+  database: <%= ENV['GCP_DATABASE'] %>
+  host:   <%= ENV['GCP_HOST'] %>
+
+# Amazon Web Services (AWS) production environment
+# production:
+#   <<: *default
+#   database: ENV['AWS_ACCESS_DATABASE']
+#   username: ENV['AWS_ACCESS_USERNAME']
+#   password: <%= ENV['PURESOULPRESENTS_API_DATABASE_PASSWORD'] %>
+
+# ENV['AWS_ACCESS_KEY_ID'] and ENV['AWS_SECRET_ACCESS_KEY']
+# ENV['AWS_REGION']
+
