@@ -147,6 +147,7 @@ class EventsController < ApplicationController
         :state,
         :status,
         :total_amount,
+        :event_type,
         :updated_at,
         :venue_capacity,
         :venue_name,
