@@ -17,7 +17,9 @@ class UsersController < ApplicationController
     # byebug
     @user = User.new(user_params)
     if @user.save
-      render json: @user, status: :created, location: @user
+      @user.image_element.attach(params[:image_element])
+      # @user.images.attach(params[:images])
+      # render json: @user, status: :created, location: @user
       redirect_to @user
     else
       render json: @user.errors, status: :unprocessable_entity
@@ -27,6 +29,7 @@ class UsersController < ApplicationController
   # PATCH/PUT /users/1
   def update
     if @user.update(user_params)
+      @user.image_element.attach(params[:image_element])
       render json: @user
     else
       render json: @user.errors, status: :unprocessable_entity
@@ -35,6 +38,7 @@ class UsersController < ApplicationController
   
   # DELETE /users/1
   def destroy
+    # @user.iamge.purge_later
     @user.destroy
   end
   
@@ -78,7 +82,11 @@ class UsersController < ApplicationController
         :tax_zip,
         :taxID,
         :created_at, 
-        :updated_at, 
+        :updated_at,
+        :image,
+        :image_element,
+        :gigs,
+        :events
       )
     end
 end

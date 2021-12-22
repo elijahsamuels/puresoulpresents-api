@@ -88,21 +88,23 @@ test:
  
 
 # Google Cloud Platform production environment
-production:
-  adapter: postgresql
-  encoding: unicode
-  pool: 5
-  timeout: 5000
-  username: <%= ENV['GCP_USERNAME'] %>
-  password: <%= ENV['GCP_PASSWORD'] %>
-  database: <%= ENV['GCP_DATABASE'] %>
-  host:   <%= ENV['GCP_HOST'] %>
+# production:
+#   adapter: postgresql
+#   encoding: unicode
+#   pool: 5
+#   timeout: 5000
+#   username: <%= ENV['GCP_USERNAME'] %>
+#   password: <%= ENV['GCP_PASSWORD'] %>
+#   database: <%= ENV['GCP_DATABASE'] %>
+#   host:   <%= ENV['GCP_HOST'] %>
 
 # Amazon Web Services (AWS) production environment
 # production:
 #   <<: *default
-#   database: ENV['AWS_ACCESS_DATABASE']
-#   username: ENV['AWS_ACCESS_USERNAME']
+# url: <%= ENV['AWS_DATABASE_URL'] %>
+#   database: <%= ENV['AWS_DATABASE_URL'] %> # this one might not work
+#   database: <%= ENV['AWS_ACCESS_DATABASE'] %>
+#   username: <%= ENV['AWS_USERNAME'] %>
 #   password: <%= ENV['PURESOULPRESENTS_API_DATABASE_PASSWORD'] %>
 
 # ENV['AWS_ACCESS_KEY_ID'] and ENV['AWS_SECRET_ACCESS_KEY']

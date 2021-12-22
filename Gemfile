@@ -25,13 +25,14 @@ gem 'bootsnap', '>= 1.4.4', require: false
 # Use Rack CORS for handling Cross-Origin Resource Sharing (CORS), making cross-origin AJAX possible
 gem 'rack-cors'
 gem 'dotenv-rails'
-
 gem 'active_model_serializers'
+gem "aws-sdk-s3", require: false
+gem 'aws-sdk-rails', '~> 3'
+# gem 'aws-sdk-s3', '~> 1'
 
-# gem 'aws-sdk-rails'
 # Google Cloud Platform (GCP) App Engine runtime environment
 # gem 'appengine', '~> 0.4.5' # old version from ruby gems
-gem "appengine", "~> 0.6" # new version from google-cloud-platform guild
+# gem "appengine", "~> 0.6" # new version from google-cloud-platform guild
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console

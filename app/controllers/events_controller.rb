@@ -19,6 +19,7 @@ class EventsController < ApplicationController
   def create
     # byebug
     @event = Event.new(event_params)
+    # byebug
     if @event.save
       render json: @event, status: :created, location: @event
     else
@@ -152,6 +153,7 @@ class EventsController < ApplicationController
         :venue_capacity,
         :venue_name,
         :zip_code,
+
       )
   end
 
