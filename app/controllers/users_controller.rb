@@ -83,7 +83,6 @@ class UsersController < ApplicationController
         :taxID,
         :created_at, 
         :updated_at,
-        :image,
         :image_element,
         :gigs,
         :events
