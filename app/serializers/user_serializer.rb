@@ -26,13 +26,21 @@ class UserSerializer < ActiveModel::Serializer
     :tax_state,
     :tax_zip,
     :taxID,
+    :instruments, # same as has_many :instruments
+    :user_instrument_primary,
+    # :secondary_instrument,
+    # :other_instruments,
+    # :user_instruments,
+    # :user_instrument_secondary,
+    # :image_element, # same as has_one :image_element
+    :user_events,# same as has_many :user_events, through: :events
     :created_at,
     :updated_at
-    :image_element
-  
-  has_many :gigs
-  has_many :events, through: :gigs
 
-  has_one :image_element
+
+  # has_many :user_instruments, through: :instruments # this is just the join table. Not really necessary to see
+
+  # has_one :instrument
+  # has_one :user_instrument_primary, through: :instrument
   
 end
