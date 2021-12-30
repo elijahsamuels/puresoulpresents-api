@@ -100,11 +100,11 @@ class EventSerializer < ActiveModel::Serializer
     :venue_capacity,
     :venue_name,
     :zip_code,
-    :gigs,
+    :user_events,
     :users
 
-  has_many :gigs
-  has_many :users, through: :gigs
+  has_many :user_events
+  has_many :users, through: :user_events
 
   def show
     UsersController.render(:show, assigns: { user: object}, layout: false).squish
