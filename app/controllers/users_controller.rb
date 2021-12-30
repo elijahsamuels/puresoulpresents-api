@@ -9,7 +9,13 @@ class UsersController < ApplicationController
 
   # GET /users/1
   def show  
-    render json: @user
+    # add the include: [:options] to use serializer
+    # render json: @user # show the everything related to the user
+    # render json: @user, include: [:user_events] # show the user with user_events
+    render json: @user, include: [:image_element] # show the user with image_element
+    # render json: @user#, include: [:user_instruments]
+
+
   end
 
   # POST /users
@@ -81,11 +87,15 @@ class UsersController < ApplicationController
         :tax_state,
         :tax_zip,
         :taxID,
-        :created_at, 
-        :updated_at,
         :image_element,
-        :gigs,
-        :events
+        :user_events,
+        # :events
+        # :user_instrument_primary,
+        # :secondary_instrument,
+        # :other_instruments
+        :created_at, 
+        :updated_at
+    
       )
     end
 end
