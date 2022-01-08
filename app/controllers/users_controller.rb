@@ -10,11 +10,25 @@ class UsersController < ApplicationController
   # GET /users/1
   def show  
     # add the include: [:options] to use serializer
+
+    # @event = Event.find_by_id(params[:id]) 
+    # render json: @user
+
+    # user = User.find_by_id(params[:id]) 
+    # render json: User.find_by_id(params[:id]) 
     # render json: @user # show the everything related to the user
-    # render json: @user, include: [:user_events] # show the user with user_events
-    render json: @user, include: [:image_element] # show the user with image_element
+    
+    # render json: @user # show the everything related to the user
+    # render :json => @user, each_serializer: UserEventSerializer
+    render json: @user, include: [:user_events] # show the user with user_events
+    # render json: @user, include: [:image_element] # show the user with image_element
     # render json: @user#, include: [:user_instruments]
 
+    # def artist
+    #   @records = Record.where('artist_id = ' + params[:artist_id])
+    #   render :json => @records, each_serializer: RecordSummarySerializer
+    # end
+  
 
   end
 
@@ -34,6 +48,7 @@ class UsersController < ApplicationController
   
   # PATCH/PUT /users/1
   def update
+    # byebug
     if @user.update(user_params)
       @user.image_element.attach(params[:image_element])
       render json: @user
@@ -89,7 +104,9 @@ class UsersController < ApplicationController
         :taxID,
         :image_element,
         :user_events,
-        # :events
+        :events,
+        :instrument,
+        # :instruments,
         # :user_instrument_primary,
         # :secondary_instrument,
         # :other_instruments

@@ -11,6 +11,7 @@ class EventSerializer < ActiveModel::Serializer
     :doors_open_time,
     :end_time,
     :event_date,
+    :event_date_utc,
     :hire_order_file,
     :hire_order_recevied,
     :indoor,
@@ -96,15 +97,15 @@ class EventSerializer < ActiveModel::Serializer
     :status,
     :event_type,
     :total_amount,
-    :updated_at,
     :venue_capacity,
     :venue_name,
     :zip_code,
     :user_events,
-    :users
+    :users,
+    :updated_at
 
-  has_many :user_events
-  has_many :users, through: :user_events
+  # has_many :user_events
+  # has_many :users, through: :user_events
 
   def show
     UsersController.render(:show, assigns: { user: object}, layout: false).squish

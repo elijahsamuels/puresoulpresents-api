@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_12_29_184235) do
+ActiveRecord::Schema.define(version: 2022_01_05_170319) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -143,6 +143,7 @@ ActiveRecord::Schema.define(version: 2021_12_29_184235) do
     t.integer "musician_15_pay_rate"
     t.boolean "musician_15_invoice_paid"
     t.boolean "musician_15_invoice_received"
+    t.datetime "event_date_utc", precision: 6
   end
 
   create_table "image_elements", force: :cascade do |t|
@@ -223,6 +224,7 @@ ActiveRecord::Schema.define(version: 2021_12_29_184235) do
     t.string "tax_last_name"
     t.string "tax_address1"
     t.string "tax_address2"
+    t.string "instrument"
   end
 
   add_foreign_key "active_storage_attachments", "active_storage_blobs", column: "blob_id"

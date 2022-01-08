@@ -45,6 +45,7 @@ class EventsController < ApplicationController
   # Use callbacks to share common setup or constraints between actions.
   def set_event
     @event = Event.find(params[:id])
+    # @user = User.find(params[:id])
   end
   
   # Only allow a list of trusted parameters through.
@@ -59,11 +60,11 @@ class EventsController < ApplicationController
         :band_size,
         :city,
         :client_notes,
-        :created_at,
         :deposit_amount,
         :doors_open_time,
         :end_time,
         :event_date,
+        :event_date_utc,
         :hire_order_file,
         :hire_order_recevied,
         :indoor,
@@ -149,10 +150,14 @@ class EventsController < ApplicationController
         :status,
         :total_amount,
         :event_type,
-        :updated_at,
         :venue_capacity,
         :venue_name,
         :zip_code,
+        :user_events,
+        :users,        
+        :updated_at,
+        :created_at
+
 
       )
   end
